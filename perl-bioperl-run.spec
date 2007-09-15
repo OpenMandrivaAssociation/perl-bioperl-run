@@ -1,7 +1,7 @@
 %define module	bioperl-run
 %define name	perl-%{module}
 %define version 1.5.1
-%define release %mkrel 3
+%define release %mkrel 4
 
 %define _requires_exceptions perl(Bio::Root::AccessorMaker)
 
