@@ -19,7 +19,6 @@ BuildRequires:	perl-devel
 Obsoletes:	perl-Bioperl-Run
 Provides:	perl-Bioperl-Run
 BuildArch:	noarch
-BuildRoot:	%{_tmppath}/%{name}-%{version}
 
 %description
 Officially organized in 1995 and existing informally for several years
