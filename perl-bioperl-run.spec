@@ -57,4 +57,5 @@ EOI
 %defattr(-,root,root)
 %doc AUTHORS Changes INSTALL.PROGRAMS LICENSE README
 %{perl_vendorlib}/Bio
-%{_mandir}/man3/*
+%{_bindir}/*
+%{_mandir}/man?/*
