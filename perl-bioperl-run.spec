@@ -1,7 +1,7 @@
 %define module	bioperl-run
 %define name	perl-%{module}
-%define version 1.5.1
-%define release %mkrel 7
+%define version 1.6.1
+%define release %mkrel 1
 
 %define _requires_exceptions perl(Bio::Root::AccessorMaker)
 
@@ -16,6 +16,9 @@ URL:		http://www.bioperl.org
 %if %{mdkversion} < 1010
 BuildRequires:	perl-devel
 %endif
+
+BuildRequires:	perl-bioperl >= 1.6
+
 Obsoletes:	perl-Bioperl-Run
 Provides:	perl-Bioperl-Run
 BuildArch:	noarch
@@ -28,7 +31,7 @@ of open source Perl tools for bioinformatics, genomics and life science
 research.
 
 %prep
-%setup -q -n %{module}-%{version}
+%setup -q -n BioPerl-run-1.6.0
 
 %build
 %{__perl} Makefile.PL INSTALLDIRS=vendor
@@ -51,4 +54,3 @@ research.
 %doc AUTHORS Changes INSTALL.PROGRAMS README examples
 %{perl_vendorlib}/Bio
 %{_mandir}/man3/*
-
