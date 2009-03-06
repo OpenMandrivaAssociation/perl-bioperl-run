@@ -34,7 +34,11 @@ research.
 %setup -q -n BioPerl-run-1.6.0
 
 %build
-%{__perl} Makefile.PL INSTALLDIRS=vendor
+%{__perl} Makefile.PL INSTALLDIRS=vendor <<EOI
+n
+a
+n
+EOI
 %make
 
 %check
@@ -43,14 +47,14 @@ research.
 %install
 %{__rm} -rf %{buildroot}
 %makeinstall_std
-%{__rm} -f %{buildroot}%{perl_vendorlib}/bptutorial.pl
-%{__rm} -f %{buildroot}%{perl_archlib}/perllocal.pod
+#%{__rm} -f %{buildroot}%{perl_vendorlib}/bptutorial.pl
+#%{__rm} -f %{buildroot}%{perl_archlib}/perllocal.pod
 
 %clean
 %{__rm} -rf %{buildroot}
 
 %files
 %defattr(-,root,root)
-%doc AUTHORS Changes INSTALL.PROGRAMS README examples
+%doc AUTHORS Changes INSTALL.PROGRAMS LICENSE README
 %{perl_vendorlib}/Bio
 %{_mandir}/man3/*
