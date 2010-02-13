@@ -59,3 +59,4 @@ EOI
 %doc AUTHORS Changes INSTALL.PROGRAMS LICENSE README
 %{perl_vendorlib}/Bio
 %{_mandir}/man?/*
+%{_bindir}/*
