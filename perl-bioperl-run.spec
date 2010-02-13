@@ -1,28 +1,29 @@
-%define module	bioperl-run
-%define name	perl-%{module}
-%define version 1.6.1
-%define release %mkrel 2
+%define upstream_name	 bioperl-run
+%define upstream_version 1.6.1
 
 %define _requires_exceptions perl(Bio::Root::AccessorMaker)
 
-Name:		%{name}
-Version:	%{version}
-Release:	%{release}
+Name:       perl-%{upstream_name}
+Version:    %perl_convert_version %{upstream_version}
+Release:    %mkrel 3
+
 Summary:	BioPerl wrappers for external programs
-Group:		Development/Perl
 License:	Artistic
-Source:		http://bioperl.org/DIST/%{module}-%{version}.tar.bz2
-URL:		http://www.bioperl.org
+Group:		Development/Perl
+Url:		http://www.bioperl.org
+Source0:	http://bioperl.org/DIST/%{upstream_name}-%{upstream_version}.tar.bz2
+
 %if %{mdkversion} < 1010
 BuildRequires:	perl-devel
 %endif
 
-BuildRequires:	perl-bioperl >= 1.6
+BuildRequires:	perl-bioperl >= 1.6.0
+
+BuildArch:	noarch
+BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}
 
 Obsoletes:	perl-Bioperl-Run
 Provides:	perl-Bioperl-Run
-BuildArch:	noarch
-BuildRoot:	%{_tmppath}/%{name}-%{version}
 
 %description
 Officially organized in 1995 and existing informally for several years
@@ -57,5 +58,4 @@ EOI
 %defattr(-,root,root)
 %doc AUTHORS Changes INSTALL.PROGRAMS LICENSE README
 %{perl_vendorlib}/Bio
-%{_bindir}/*
 %{_mandir}/man?/*
