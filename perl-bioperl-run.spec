@@ -10,7 +10,7 @@ Release:    5
 Summary:	BioPerl wrappers for external programs
 License:	Artistic
 Group:		Development/Perl
-Url:		http://www.bioperl.org
+Url:		https://www.bioperl.org
 Source0:	http://bioperl.org/DIST/%{upstream_name}-%{upstream_version}.tar.bz2
 
 %if %{mdkversion} < 1010
